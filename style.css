@@ -138,7 +138,7 @@ h1 {
 main {
   width: 100%;
   max-width: 1500px;
-  margin: 50px 0 0 20px;
+  margin-top: 50px;
   display: flex;
   overflow-x: hidden;
   flex-direction: column-reverse;
@@ -146,15 +146,15 @@ main {
 }
 
 .main__content {
-  align-self: center;
+  padding: 30px 30px 0 30px;
   text-align: center;
-  padding: 30px 30px 0 0;
 }
 
 .main__content p {
   color: var(--color-gray);
   font-weight: 500;
   font-size: 1.6rem;
+  margin-bottom: 10px;
 }
 
 .main__img {
@@ -166,14 +166,57 @@ main {
 .button {
   border-radius: 50px;
   background-color: var(--color-cyan);
-  padding: 8px 15px;
+  padding: 8px 25px;
   color: #fff;
+  display: inline-block;
   cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  font-family: inherit;
 }
 
 .button:hover {
   background-color: var(--color-light-cyan);
   color: #fff;
+}
+
+.links__form__container {
+  padding: 0 20px 0 20px;
+}
+
+.links__form__container input {
+  padding: 20px;
+  border: none;
+  font-family: inherit;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.links__form__container .links__form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 6px;
+  transform: translateY(50%);
+  background-color: var(--color-violet);
+}
+
+.links__form__container .links__form .button {
+  padding: 15px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.shorten-container {
+  background-color: #f0f1f6;
+  padding: 100px 20px 0 20px;
+}
+
+.features {
+  background-color: #f0f1f6;
+  height: 90vh;
+  padding: 60px 20px 0 20px;
 }
 
 @media all and (min-width: 637px) {
@@ -253,7 +296,7 @@ main {
   .main__content {
     align-self: center;
     text-align: left;
-    padding: 30px 30px 0 0;
+    padding: 0;
   }
   h1 {
     font-size: 5.5vw;
