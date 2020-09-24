@@ -64,6 +64,7 @@ nav .menu {
   border-radius: 10px;
   transform: scaleY(0);
   transform-origin: top;
+  padding: 0 30px;
 }
 
 nav .menu.hide {
@@ -94,7 +95,6 @@ nav ul li a {
   display: block;
   text-align: center;
   padding: 20px 0;
-  margin: 0 30px;
   text-decoration: none;
 }
 
