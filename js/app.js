@@ -4,4 +4,5 @@ const menuEl = document.querySelector('.menu');
 toggleNavBtn.addEventListener('click', () => {
   toggleNavBtn.classList.toggle('show');
   menuEl.classList.toggle('show');
+  menuEl.classList.toggle('hide');
 });

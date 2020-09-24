@@ -19,13 +19,9 @@ html {
 }
 
 body {
-  background-color: #f0f1f6;
+  background-color: #fff;
   font-family: 'Poppins', sans-serif;
   font-size: 1.8em;
-}
-
-.container {
-  max-width: 1440px;
 }
 
 header {
@@ -35,6 +31,7 @@ header {
 .main {
   background-color: #fff;
   height: 100vh;
+  max-width: 1440px;
 }
 
 nav {
@@ -59,10 +56,13 @@ nav .menu {
   border-radius: 10px;
   transform: scaleY(0);
   transform-origin: top;
-  transition: all 0.2s ease-in-out;
 }
 
+nav .menu.hide {
+  transition: all 0.2s ease-in-out;
+}
 nav .menu.show {
+  transition: all 0.2s ease-in-out;
   transform: scaleY(1);
 }
 
@@ -124,6 +124,8 @@ nav ul li a {
     position: unset;
     background-color: #fff;
     display: flex;
+    transform: scaleY(1);
+    transition: none;
   }
   nav ul {
     flex-direction: row;
@@ -136,6 +138,7 @@ nav ul li a {
 
   nav ul li a {
     color: var(--color-gray);
+    padding: 0 20px;
   }
 
   nav .menu .buttons {
