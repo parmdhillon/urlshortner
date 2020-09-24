@@ -10,6 +10,7 @@ html {
 
 :root {
   --color-cyan: hsl(180, 66%, 49%);
+  --color-light-cyan: #9be3e2;
   --color-violet: hsl(257, 27%, 26%);
   --color-red: hsl(0, 87%, 67%);
   --color-gray: hsl(0, 0%, 75%);
@@ -24,28 +25,23 @@ body {
   font-size: 1.8em;
 }
 
-.container {
+header {
+  padding: 40px 20px 0 20px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-header {
-  padding: 40px 20px 0 20px;
+.container {
+  overflow-x: hidden;
 }
-
-.main {
-  background-color: #fff;
-  height: 100vh;
-  width: 100%;
-  max-width: 1440px;
-}
-
 nav {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  max-width: 1440px;
 }
 
 nav .logo {
@@ -135,12 +131,49 @@ nav .menu .buttons .button {
   transform: scale(0);
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+main {
+  width: 100%;
+  max-width: 1500px;
+  margin: 50px 0 0 20px;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.main__content {
+  align-self: center;
+  text-align: center;
+  padding: 30px 30px 0 0;
+}
+
+.main__content p {
+  color: var(--color-gray);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.main__img {
+  width: 120%;
+  max-width: 400px;
+  transform: translateX(23%);
+}
+
 .button {
   border-radius: 50px;
   background-color: var(--color-cyan);
   padding: 8px 15px;
   color: #fff;
   cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--color-light-cyan);
+  color: #fff;
 }
 
 @media all and (min-width: 637px) {
@@ -208,5 +241,27 @@ nav .menu .buttons .button {
   }
   nav .menu .buttons .button::after {
     display: none;
+  }
+  header {
+    padding: 40px 20px 0 40px;
+  }
+  main {
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 50px 0px 0px 40px;
+  }
+  .main__content {
+    align-self: center;
+    text-align: left;
+    padding: 30px 30px 0 0;
+  }
+  h1 {
+    font-size: 5.5vw;
+    line-height: 6.5vw;
+  }
+  .main__img {
+    width: 120%;
+    max-width: 50vw;
+    transform: translateX(5vw);
   }
 }
