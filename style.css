@@ -47,6 +47,8 @@ nav .logo {
 }
 
 nav .menu {
+  font-size: 1.4rem;
+  font-weight: 700;
   position: absolute;
   left: 0;
   background-color: var(--color-violet);
@@ -68,6 +70,7 @@ nav .menu.show {
 
 nav .menu .buttons {
   border-top: 1px solid hsl(257, 32%, 43%);
+  margin-bottom: 30px;
 }
 
 nav ul {
@@ -86,6 +89,10 @@ nav ul li a {
   text-align: center;
   padding: 20px 0;
   text-decoration: none;
+}
+
+nav .menu .buttons .button {
+  padding: 12px 15px;
 }
 
 .toggleNav {
@@ -116,7 +123,15 @@ nav ul li a {
   transform: scale(0);
 }
 
-@media all and (min-width: 480px) {
+.button {
+  border-radius: 50px;
+  background-color: var(--color-cyan);
+  padding: 8px 15px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media all and (min-width: 637px) {
   .toggleNav {
     display: none;
   }
@@ -126,6 +141,7 @@ nav ul li a {
     display: flex;
     transform: scaleY(1);
     transition: none;
+    padding: 0px;
   }
   nav ul {
     flex-direction: row;
@@ -137,13 +153,18 @@ nav ul li a {
   }
 
   nav ul li a {
-    color: var(--color-gray);
+    color: var(--color-gray-violet);
     padding: 0 20px;
   }
 
   nav .menu .buttons {
     border-top: none;
     flex: 1;
+    margin: 0px;
     justify-content: flex-end;
+  }
+
+  nav .menu .buttons .button {
+    padding: 8px 15px;
   }
 }
