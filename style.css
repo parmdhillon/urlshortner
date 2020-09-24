@@ -210,11 +210,24 @@ main {
   margin-bottom: 15px;
 }
 
-.links__form__container .links__form .button {
+input.danger {
+  border: 3px solid var(--color-red);
+}
+input.danger::placeholder {
+  color: var(--color-red);
+}
+.links__form .button {
   padding: 15px;
   border-radius: 6px;
   font-weight: 700;
   font-size: 1.6rem;
+}
+
+.links__form .error {
+  color: var(--color-red);
+  font-style: italic;
+  font-size: 1.5rem;
+  display: none;
 }
 
 .shorten-container {
@@ -314,21 +327,22 @@ main {
     transform: translateX(12vw);
   }
   .links__form__container .links__form {
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
     background-image: url(images/bg-shorten-desktop.svg);
     background-size: 100% 100%;
+    padding: 35px 45px;
   }
   .links__form__container input {
     padding: 13px;
     flex: 1;
     margin-bottom: 0;
   }
-  .links__form__container .links__form {
-    padding: 35px 45px;
-  }
   .links__form__container .links__form .button {
     padding: 11px 20px;
     margin-left: 16px;
+  }
+  .links__form .error {
+    flex: 1 1 100%;
   }
 }
