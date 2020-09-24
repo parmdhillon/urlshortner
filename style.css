@@ -101,6 +101,7 @@ nav ul li:hover {
 
 nav .menu .buttons .button {
   padding: 12px 15px;
+  display: block;
 }
 
 .toggleNav {
@@ -199,6 +200,10 @@ main {
   border-radius: 6px;
   transform: translateY(50%);
   background-color: var(--color-violet);
+  background-image: url(images/bg-shorten-mobile.svg);
+  background-size: calc(100% - 100px) 70%;
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 .links__form__container .links__form .button {
