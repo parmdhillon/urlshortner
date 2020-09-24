@@ -4,5 +4,11 @@ const menuEl = document.querySelector('.menu');
 toggleNavBtn.addEventListener('click', () => {
   toggleNavBtn.classList.toggle('show');
   menuEl.classList.toggle('show');
-  menuEl.classList.toggle('hide');
+  if (menuEl.classList.contains('smooth')) {
+    setTimeout(() => {
+      menuEl.classList.remove('smooth');
+    }, 200);
+  } else {
+    menuEl.classList.add('smooth');
+  }
 });

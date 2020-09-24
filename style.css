@@ -64,11 +64,10 @@ nav .menu {
   padding: 0 30px;
 }
 
-nav .menu.hide {
+nav .menu.smooth {
   transition: all 0.2s ease-in-out;
 }
 nav .menu.show {
-  transition: all 0.2s ease-in-out;
   transform: scaleY(1);
 }
 
