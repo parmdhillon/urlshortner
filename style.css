@@ -26,11 +26,11 @@ body {
 }
 
 header {
-  padding: 40px 20px 0 20px;
+  padding: 40px 8vw 0 8vw;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-content: space-between;
 }
 .container {
   overflow-x: hidden;
@@ -147,7 +147,7 @@ main {
 }
 
 .main__content {
-  padding: 30px 30px 0 30px;
+  padding: 30px 8vw 0 8vw;
   text-align: center;
 }
 
@@ -182,7 +182,24 @@ main {
 }
 
 .links__form__container {
-  padding: 0 20px 0 20px;
+  padding: 0 8vw 0 8vw;
+  display: flex;
+  justify-content: center;
+}
+
+.links__form__container .links__form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 100%;
+  max-width: 1440px;
+  border-radius: 6px;
+  transform: translateY(50%);
+  background-color: var(--color-violet);
+  background-image: url(images/bg-shorten-mobile.svg);
+  background-size: calc(100% - 100px) 70%;
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 .links__form__container input {
@@ -191,19 +208,6 @@ main {
   font-family: inherit;
   border-radius: 6px;
   margin-bottom: 15px;
-}
-
-.links__form__container .links__form {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border-radius: 6px;
-  transform: translateY(50%);
-  background-color: var(--color-violet);
-  background-image: url(images/bg-shorten-mobile.svg);
-  background-size: calc(100% - 100px) 70%;
-  background-repeat: no-repeat;
-  background-position: top right;
 }
 
 .links__form__container .links__form .button {
@@ -290,26 +294,41 @@ main {
   nav .menu .buttons .button::after {
     display: none;
   }
-  header {
-    padding: 40px 20px 0 40px;
-  }
+
   main {
     flex-direction: row;
     align-items: flex-end;
-    margin: 50px 0px 0px 40px;
   }
   .main__content {
     align-self: center;
     text-align: left;
-    padding: 0;
+    padding: 0 0 0 8vw;
   }
   h1 {
-    font-size: 5.5vw;
-    line-height: 6.5vw;
+    font-size: 4vw;
+    line-height: 5vw;
   }
   .main__img {
     width: 120%;
     max-width: 50vw;
-    transform: translateX(5vw);
+    transform: translateX(12vw);
+  }
+  .links__form__container .links__form {
+    flex-direction: row;
+    align-items: center;
+    background-image: url(images/bg-shorten-desktop.svg);
+    background-size: 100% 100%;
+  }
+  .links__form__container input {
+    padding: 13px;
+    flex: 1;
+    margin-bottom: 0;
+  }
+  .links__form__container .links__form {
+    padding: 35px 45px;
+  }
+  .links__form__container .links__form .button {
+    padding: 11px 20px;
+    margin-left: 16px;
   }
 }
