@@ -170,6 +170,7 @@ nav .menu .buttons .button {
     color: var(--color-gray-violet);
     padding: 0 0 2px 0;
     position: relative;
+    margin: 0;
   }
   nav ul li a:hover {
     color: var(--color-hard-violet);
@@ -189,6 +190,10 @@ nav .menu .buttons .button {
   nav ul li a:hover::after {
     transform-origin: bottom right;
     transform: scaleX(1);
+  }
+  nav ul li:hover {
+    background: none;
+    border-radius: none;
   }
 
   nav .menu .buttons {
