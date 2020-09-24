@@ -207,7 +207,6 @@ main {
   border: none;
   font-family: inherit;
   border-radius: 6px;
-  margin-bottom: 15px;
 }
 
 input.danger {
@@ -217,10 +216,12 @@ input.danger::placeholder {
   color: var(--color-red);
 }
 .links__form .button {
+  margin-top: 15px;
   padding: 15px;
   border-radius: 6px;
   font-weight: 700;
   font-size: 1.6rem;
+  order: 2;
 }
 
 .links__form .error {
@@ -230,9 +231,44 @@ input.danger::placeholder {
   display: none;
 }
 
-.shorten-container {
+.shortUrl-container {
   background-color: #f0f1f6;
-  padding: 100px 20px 0 20px;
+  padding: 100px 8vw 0 8vw;
+}
+
+.shortUrl-box {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+}
+.shortUrl-box:not(:last-child) {
+  margin-bottom: 20px;
+}
+.shortUrl--link {
+  padding: 10px 15px;
+  font-size: 1.3rem;
+  color: #000;
+}
+.shortUrl--refLink {
+  padding: 10px 15px;
+  font-size: 1.3rem;
+  color: var(--color-cyan);
+}
+.shortUrl-box .button {
+  padding: 10px;
+  margin: 0 15px 10px 15px;
+  display: block;
+  font-size: 1.3rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.shortUrl-box hr {
+  width: 100%;
+  background-color: #e5e5e5;
+  height: 1px;
+  border: none;
 }
 
 .features {
@@ -340,9 +376,28 @@ input.danger::placeholder {
   }
   .links__form__container .links__form .button {
     padding: 11px 20px;
-    margin-left: 16px;
+    margin: 0px 0px 0px 12px;
+    order: 0;
   }
   .links__form .error {
     flex: 1 1 100%;
+  }
+
+  .shortUrl-box {
+    flex-direction: row;
+    align-items: center;
+    padding: 7px 15px;
+  }
+
+  .shortUrl-box hr {
+    display: none;
+  }
+
+  .shortUrl--link {
+    flex: 1;
+  }
+  .shortUrl-box .button {
+    padding: 5px 20px;
+    margin: 0;
   }
 }
