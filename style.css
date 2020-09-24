@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-cyan: hsl(180, 66%, 49%);
+  --color-violet: hsl(257, 27%, 26%);
+  --color-red: hsl(0, 87%, 67%);
+  --color-gray: hsl(0, 0%, 75%);
+  --color-gray-violet: hsl(257, 7%, 63%);
+  --color-hard-blue: hsl(255, 11%, 22%);
+  --color-hard-violet: hsl(260, 8%, 14%);
+}
+
+body {
+  background-color: #f0f1f6;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8em;
+}
+
+.container {
+  max-width: 1440px;
+}
+
+header {
+  padding: 40px 20px 0 20px;
+}
+
+.main {
+  background-color: #fff;
+  height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+nav .logo {
+  width: 105px;
+  height: 30px;
+}
+
+nav .menu {
+  position: absolute;
+  left: 0;
+  background-color: var(--color-violet);
+  width: 100%;
+  top: 50px;
+  padding: 0 30px 0 30px;
+  border-radius: 10px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.2s ease-in-out;
+}
+
+nav .menu.show {
+  transform: scaleY(1);
+}
+
+nav .menu .buttons {
+  border-top: 1px solid hsl(257, 32%, 43%);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+nav ul li {
+  width: 100%;
+}
+nav ul li a {
+  color: #fff;
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+  text-decoration: none;
+}
+
+.toggleNav {
+  width: 25px;
+  cursor: pointer;
+}
+
+.toggleNav:after,
+.toggleNav:before,
+.toggleNav div {
+  background-color: var(--color-gray-violet);
+  content: '';
+  display: block;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.show.toggleNav:before {
+  transform: translateY(8px) rotate(135deg);
+}
+
+.show.toggleNav:after {
+  transform: translateY(-8px) rotate(-135deg);
+}
+
+.show.toggleNav div {
+  transform: scale(0);
+}
+
+@media all and (min-width: 480px) {
+  .toggleNav {
+    display: none;
+  }
+  nav .menu {
+    position: unset;
+    background-color: #fff;
+    display: flex;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: auto;
+  }
+  nav ul li {
+    width: auto;
+  }
+
+  nav ul li a {
+    color: var(--color-gray);
+  }
+
+  nav .menu .buttons {
+    border-top: none;
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
