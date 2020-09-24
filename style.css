@@ -134,6 +134,7 @@ nav .menu .buttons .button {
 
 h1 {
   font-size: 3rem;
+  color: var(--color-hard-blue);
 }
 
 main {
@@ -271,12 +272,6 @@ input.danger::placeholder {
   border: none;
 }
 
-.features {
-  background-color: #f0f1f6;
-  height: 90vh;
-  padding: 60px 20px 0 20px;
-}
-
 @media all and (min-width: 637px) {
   .toggleNav {
     display: none;
@@ -399,5 +394,118 @@ input.danger::placeholder {
   .shortUrl-box .button {
     padding: 5px 20px;
     margin: 0;
+  }
+  .features--content p {
+    width: 50%;
+  }
+}
+
+/*Part 2*/
+
+.features--container {
+  background-color: #f0f1f6;
+  padding: 100px 8vw 0 8vw;
+}
+
+.features--content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.features--content h2 {
+  color: var(--color-hard-blue);
+}
+
+.features--content p {
+  color: var(--color-gray-violet);
+  font-weight: 500;
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 20px;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  position: relative;
+}
+.feature--line {
+  position: absolute;
+  width: 10px;
+  height: calc(100% - 50px);
+  background-color: var(--color-cyan);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.featureBox {
+  padding: 40px 20px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin: 40px 0;
+  background-color: #fff;
+}
+
+.feature--icon {
+  background-color: var(--color-violet);
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.feature--icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.feature--title {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  display: block;
+  color: var(--color-hard-blue);
+}
+
+.feature--info {
+  font-size: 1.5rem;
+  color: var(--color-gray-violet);
+}
+
+@media all and (min-width: 800px) {
+  .featureList {
+    margin-top: 90px;
+    flex-direction: row;
+  }
+  .featureBox {
+    margin: 0 10px;
+    height: 100%;
+    text-align: left;
+  }
+  .feature--icon {
+    left: 60px;
+  }
+  .featureBox:nth-child(3) {
+    margin-top: 40px;
+  }
+  .featureBox:nth-child(4) {
+    margin-top: 80px;
+  }
+  .feature--line {
+    position: absolute;
+    width: calc(100% - 50px);
+    height: 10px;
+    background-color: var(--color-cyan);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
