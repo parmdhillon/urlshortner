@@ -177,6 +177,13 @@ main {
   font-family: inherit;
 }
 
+.button.copied {
+  background-color: var(--color-violet);
+}
+.button.copied:hover {
+  background-color: var(--color-violet);
+}
+
 .button:hover {
   background-color: var(--color-light-cyan);
   color: #fff;
@@ -235,6 +242,7 @@ input.danger::placeholder {
 .shortUrl-container {
   background-color: #f0f1f6;
   padding: 100px 8vw 0 8vw;
+  display: none;
 }
 
 .shortUrl-box {
