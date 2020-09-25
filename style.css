@@ -547,6 +547,9 @@ input.danger::placeholder {
   align-items: center;
   margin-top: 40px;
 }
+.social--container {
+  margin-top: 20px;
+}
 .social--container a {
   padding: 0 10px;
 }
