@@ -52,6 +52,7 @@ class ShortUrlAPI {
       localStorage.setItem('hashids', getHashIDS.toString());
       this.updateUI();
     } else {
+      form.querySelector('button').classList.remove('spinner');
       throw 'Something went wrong! Try Again';
     }
   }
@@ -76,6 +77,7 @@ class ShortUrlAPI {
     document.querySelector('.shortUrl-container').appendChild(urlEl);
     form.reset();
     document.getElementById('responseError').style.display = 'none';
+    form.querySelector('button').classList.remove('spinner');
   }
 
   async copyBtnHandler(shortUrl) {
@@ -122,6 +124,7 @@ class App {
     new LocalUrl();
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      form.querySelector('button').classList.add('spinner');
       const newURL = form.querySelector('input').value;
       new ShortUrlAPI(newURL).sendData();
     });
