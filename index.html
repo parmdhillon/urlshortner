@@ -48,13 +48,15 @@
         </div>
         <img src="images/illustration-working.svg" class="main__img" />
       </main>
-      <div class="links__form__container">
-        <div class="links__form">
-          <input type="text" placeholder="Shorten a link here..." />
-          <button class="button">Shorten it!</button>
-          <div class="error">Please Add Valid URL</div>
+      <form id="shortURLForm">
+        <div class="links__form__container">
+          <div class="links__form">
+            <input type="text" placeholder="Shorten a link here..." />
+            <button type="submit" class="button">Shorten it!</button>
+            <div id="responseError" class="error">Please Add Valid URL</div>
+          </div>
         </div>
-      </div>
+      </form>
       <div class="shortUrl-container"></div>
       <div class="features--container">
         <div class="features--content">

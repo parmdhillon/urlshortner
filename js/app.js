@@ -1,5 +1,6 @@
 const toggleNavBtn = document.getElementById('toggleNav');
 const menuEl = document.querySelector('.menu');
+const form = document.getElementById('shortURLForm');
 
 toggleNavBtn.addEventListener('click', () => {
   toggleNavBtn.classList.toggle('show');
@@ -23,7 +24,15 @@ class ShortUrlAPI {
 
   async sendData() {
     if (this.url == '') {
+      document.getElementById('responseError').style.display = 'block';
       return;
+    } else {
+      var expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+      var regex = new RegExp(expression);
+      if (!this.url.match(regex)) {
+        document.getElementById('responseError').style.display = 'block';
+        return;
+      }
     }
     const apiResponse = await fetch('https://rel.ink/api/links/', {
       method: 'post',
@@ -37,6 +46,10 @@ class ShortUrlAPI {
     });
     if (apiResponse.ok) {
       this.hashID = await apiResponse.json();
+      let getHashIDS = localStorage.getItem('hashids');
+      getHashIDS = getHashIDS ? getHashIDS.split(',') : [];
+      getHashIDS.push(this.hashID.hashid);
+      localStorage.setItem('hashids', getHashIDS.toString());
       this.updateUI();
     } else {
       throw 'Something went wrong! Try Again';
@@ -61,6 +74,8 @@ class ShortUrlAPI {
     );
     urlEl.insertAdjacentElement('beforeend', this.copyBtn);
     document.querySelector('.shortUrl-container').appendChild(urlEl);
+    form.reset();
+    document.getElementById('responseError').style.display = 'none';
   }
 
   async copyBtnHandler(shortUrl) {
@@ -77,8 +92,39 @@ class ShortUrlAPI {
 class LocalUrl extends ShortUrlAPI {
   constructor() {
     super(false);
+    let getHashIDS = localStorage.getItem('hashids');
+    if (!getHashIDS) {
+      return;
+    }
+    getHashIDS = getHashIDS.split(',');
+    getHashIDS.forEach((hashID) => {
+      this.hashID = { hashid: hashID };
+      this.fetchData();
+    });
+  }
+
+  async fetchData() {
+    const apiResponse = await fetch(
+      'https://rel.ink/api/links/' + this.hashID.hashid + '/'
+    );
+    if (apiResponse.ok) {
+      const data = await apiResponse.json();
+      this.url = data.url;
+      this.updateUI();
+    } else {
+      throw 'Something went wrong! Try Again';
+    }
   }
 }
 
-const getURL = new ShortUrlAPI('https://google.com');
-getURL.sendData();
+class App {
+  static init() {
+    const getURL = new LocalUrl();
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newURL = form.querySelector('input').value;
+      new ShortUrlAPI(newURL).sendData();
+    });
+  }
+}
+App.init();
