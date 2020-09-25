@@ -34,6 +34,7 @@ class ShortUrlAPI {
         return;
       }
     }
+    form.querySelector('button').classList.add('spinner');
     const apiResponse = await fetch('https://rel.ink/api/links/', {
       method: 'post',
       headers: {
@@ -124,7 +125,6 @@ class App {
     new LocalUrl();
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      form.querySelector('button').classList.add('spinner');
       const newURL = form.querySelector('input').value;
       new ShortUrlAPI(newURL).sendData();
     });
