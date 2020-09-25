@@ -504,7 +504,68 @@ input.danger::placeholder {
   display: inline-block;
   margin-bottom: 15px;
 }
+
+.footer--container {
+  background-color: var(--color-hard-violet);
+}
+.footer--content {
+  padding: 40px 8vw 50px 8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer--content .title {
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  font-size: 3.3rem;
+}
+.footer--content .subTitle {
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.footer--content a.links {
+  color: #c9c7ca;
+  display: block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+.footer--content a.links:hover {
+  color: var(--color-cyan);
+}
+.list--container {
+  display: flex;
+  flex-direction: column;
+}
+.list--container .list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.social--container a {
+  padding: 0 10px;
+}
 @media all and (min-width: 637px) {
+  .footer--content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .list--container {
+    margin-top: 30px;
+    flex-direction: row;
+  }
+  .social--container {
+    margin-top: 30px;
+  }
+  .list--container .list {
+    margin: 0 20px;
+    align-items: flex-start;
+  }
   .boost--content {
     background-image: url('images/bg-boost-desktop.svg');
     background-size: 100% 100%;
@@ -518,6 +579,23 @@ input.danger::placeholder {
 }
 
 @media all and (min-width: 900px) {
+  .footer--content {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .footer--content .title {
+    flex: 1;
+  }
+  .list--container {
+    margin-top: 0px;
+  }
+  .footer--container .list:not(:first-child) {
+    margin-left: 40px;
+  }
+  .social--container {
+    margin-top: 0px;
+    margin-left: 30px;
+  }
   .featureList {
     margin-top: 90px;
     flex-direction: row;
