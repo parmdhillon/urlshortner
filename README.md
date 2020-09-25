@@ -1,5 +1,7 @@
 # Shortly
 
+**Live:** https://parmdhillon.github.io/urlshortner/
+
 It is an URL Shortner App using "https://rel.ink" API.
 
 - Vanilla JS Only
