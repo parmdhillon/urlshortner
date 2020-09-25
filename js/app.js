@@ -119,7 +119,7 @@ class LocalUrl extends ShortUrlAPI {
 
 class App {
   static init() {
-    const getURL = new LocalUrl();
+    new LocalUrl();
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const newURL = form.querySelector('input').value;
